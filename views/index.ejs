@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
     <title>Advice</title>
   </head>
+  <!-- include header or other files using ejs just like blade in laravel -->
+  <header><%- include("header.ejs") %></header>
   <body>
-    <h1>Good Morning It's a <%= dayType %>. So <%= advice %></h1>
+    <div style="margin: 5% 10%">
+      <h1>Good Morning It's a <%= dayType %>. So <%= advice %></h1>
+      <p>Things to do:</p>
+      <% for(let i = 0; i < tasks.length; i++){ %>
+      <li><%= tasks[i] %></li>
+      <% } %>
+    </div>
   </body>
 </html>
